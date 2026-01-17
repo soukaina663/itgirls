@@ -1,0 +1,457 @@
+.mPage{
+    background: #ffffff;
+}
+
+/* HERO full page */
+.mHero{
+    position: relative;
+    min-height: calc(100vh - 96px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.mHeroBg{
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 15% 25%, rgba(20,184,166,0.20), transparent 45%),
+            radial-gradient(circle at 70% 35%, rgba(13,148,136,0.16), transparent 50%),
+            linear-gradient(180deg, rgba(243,251,251,0.95), rgba(243,251,251,0.55));
+    z-index: 0;
+}
+
+.mHero__inner{
+    position: relative;
+    z-index: 1;
+    width: min(1180px, 100%);
+    padding: 34px 16px 28px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.mHero__title{
+    margin: 0 0 14px;
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    color: #0f172a;
+}
+
+.mAccent{
+    color: rgba(13,148,136,1);
+}
+
+.mHero__subtitle{
+    margin: 0;
+    max-width: 56ch;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(15,23,42,0.74);
+}
+
+/* Mentor card */
+.mMentorCard{
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    box-shadow: 0 18px 55px rgba(0,0,0,0.10);
+    padding: 18px;
+}
+
+.mMentorCard--compact{
+    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+}
+
+.mMentorTop{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.mAvatar{
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: rgba(20,184,166,0.12);
+    border: 1px solid rgba(20,184,166,0.18);
+    font-size: 20px;
+}
+
+.mMentorLine1{
+    margin-bottom: 4px;
+}
+
+.mVerified{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 900;
+    color: rgba(13,148,136,1);
+}
+
+.mMentorName{
+    font-size: 18px;
+    font-weight: 950;
+    color: rgba(15,23,42,0.92);
+    margin-bottom: 2px;
+}
+
+.mMentorTitle{
+    font-size: 13px;
+    color: rgba(15,23,42,0.65);
+}
+
+.mTagRow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.mTag{
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(248,250,252,0.9);
+    font-weight: 800;
+    font-size: 12px;
+    color: rgba(15,23,42,0.78);
+}
+
+.mMentorBio{
+    color: rgba(15,23,42,0.68);
+    line-height: 1.45;
+    font-size: 13px;
+    margin: 0 0 14px;
+}
+
+/* Buttons (plus carrés) */
+.mBtnPrimary{
+    width: 100%;
+    border: 1px solid rgba(13,148,136,0.25);
+    background: rgba(13,148,136,1);
+    color: white;
+    font-weight: 900;
+    padding: 12px 14px;
+    border-radius: 12px; /* ✅ pas cercle */
+    cursor: pointer;
+}
+
+.mBtnPrimary--full{
+    margin-top: 10px;
+}
+
+.mBtnSquare{
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.95);
+    font-weight: 950;
+    cursor: pointer;
+    color: rgba(15,23,42,0.85);
+}
+
+/* hero mentor navigation */
+.mHeroNav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.mHeroNavInfo{
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.92);
+    border-radius: 12px;
+    padding: 8px 12px;
+    min-width: 110px;
+    text-align: center;
+}
+
+.mHeroNavLabel{
+    font-size: 11px;
+    font-weight: 900;
+    color: rgba(15,23,42,0.55);
+}
+
+.mHeroNavValue{
+    font-size: 14px;
+    font-weight: 950;
+    color: rgba(15,23,42,0.86);
+}
+
+/* Sections */
+.mSection{
+    padding: 34px 0;
+}
+
+.mSection--soft{
+    background: rgba(243,251,251,0.55);
+    border-top: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.mSection__inner{
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.mSection__header{
+    margin-bottom: 18px;
+}
+
+.mSection__title{
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: rgba(15,23,42,0.92);
+}
+
+.mSection__sub{
+    margin: 0;
+    color: rgba(15,23,42,0.65);
+}
+
+/* Mentors list */
+.mMentorsGrid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.mMentorWrap{
+    display: flex;
+    flex-direction: column;
+}
+
+/* HOW full page */
+.mHow{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 40px 0;
+    background: #ffffff;
+}
+
+.mHow__inner{
+    width: min(1180px, 100%);
+    padding: 0 16px;
+    text-align: center;
+}
+
+.mPillTop{
+    display: inline-flex;
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: rgba(15,23,42,0.92);
+    color: #fff;
+    font-weight: 900;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.mHow__title{
+    margin: 0 0 10px;
+    font-size: 40px;
+    color: rgba(15,23,42,0.92);
+}
+
+.mHow__subtitle{
+    margin: 0 auto 26px;
+    max-width: 64ch;
+    color: rgba(15,23,42,0.65);
+}
+
+.mSteps{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.mStep{
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    padding: 18px;
+    text-align: left;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+}
+
+.mStepNum{
+    width: 46px;
+    height: 46px;
+    border-radius: 12px; /* ✅ carré */
+    background: rgba(20,184,166,0.16);
+    border: 1px solid rgba(20,184,166,0.22);
+    display: grid;
+    place-items: center;
+    font-weight: 950;
+    color: rgba(13,148,136,1);
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.mStepTitle{
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: rgba(15,23,42,0.92);
+}
+
+.mStepText{
+    margin: 0;
+    color: rgba(15,23,42,0.65);
+    line-height: 1.55;
+}
+
+/* Programs */
+.mProgramsGrid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.mProgramCard{
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.95);
+    padding: 16px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+}
+
+.mProgramTitle{
+    font-weight: 950;
+    margin-bottom: 8px;
+    color: rgba(15,23,42,0.92);
+}
+
+.mProgramDesc{
+    color: rgba(15,23,42,0.65);
+    line-height: 1.55;
+}
+
+/* Testimonials */
+.mTestimonials{
+    background: rgba(243,251,251,0.55);
+    padding: 44px 0 52px;
+    border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.mTestimonials__inner{
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.mTestimonials__title{
+    margin: 0 0 10px;
+    font-size: 34px;
+    color: rgba(15,23,42,0.92);
+}
+
+.mTestimonials__sub{
+    margin: 0 auto 26px;
+    max-width: 70ch;
+    color: rgba(15,23,42,0.65);
+}
+
+.mTestGrid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    text-align: left;
+}
+
+.mTestCard{
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.95);
+    padding: 16px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+}
+
+.mStars{
+    color: #f59e0b;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.mTestText{
+    color: rgba(15,23,42,0.75);
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.mTestUser{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 12px;
+}
+
+.mTestAvatar{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(20,184,166,0.12);
+    border: 1px solid rgba(20,184,166,0.18);
+}
+
+.mTestName{
+    font-weight: 950;
+    color: rgba(15,23,42,0.92);
+}
+
+.mTestMeta{
+    font-size: 12px;
+    color: rgba(15,23,42,0.60);
+}
+
+/* Responsive */
+@media (max-width: 980px){
+    .mHero__inner{ grid-template-columns: 1fr; }
+    .mHero__title{ font-size: 44px; }
+    .mMentorsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mSteps{ grid-template-columns: 1fr; }
+    .mProgramsGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mTestGrid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px){
+    .mHero__title{ font-size: 36px; }
+    .mMentorsGrid{ grid-template-columns: 1fr; }
+    .mProgramsGrid{ grid-template-columns: 1fr; }
+}
+/* ✅ Nos programmes en plein écran (comme les autres sections) */
+.mSection.mSection--soft{
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* ✅ Un peu plus d’air comme la maquette */
+.mProgramsGrid{
+    margin-top: 18px;
+}
+
+/* ✅ Cartes comme l’image (plus propres, sans changer ton HTML) */
+.mProgramCard{
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

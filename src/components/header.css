@@ -1,0 +1,91 @@
+.home-header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 96px;
+    background: rgba(243, 251, 251, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.home-header__inner{
+    max-width: 1120px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.home-header__brand{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex: 0 0 auto;
+}
+
+.home-header__logo{
+    height: 150px;
+    width: auto;
+    display: block;
+}
+
+.home-header__nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.home-header__link{
+    text-decoration: none;
+    color: rgba(15, 23, 42, 0.85);
+    font-weight: 700;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.home-header__link:hover{ opacity: 1; }
+
+.home-header__link.is-active{
+    opacity: 1;
+    position: relative;
+}
+
+.home-header__link.is-active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 2px;
+    background: rgba(20,184,166,0.75);
+    border-radius: 999px;
+}
+
+.home-header__actions{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 0 0 auto;
+}
+
+.home-header__signin{
+    color: rgba(15, 23, 42, 0.85);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.home-header__cta{
+    text-decoration: none;
+    background: #0f766e;
+    color: #fff;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px rgba(15, 118, 110, 0.18);
+}

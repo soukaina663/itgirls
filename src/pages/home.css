@@ -1,0 +1,522 @@
+:root{
+    --bg: #f3fbfb;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: rgba(15, 23, 42, 0.65);
+
+    --primary: #14b8a6;
+    --primary-dark: #0f766e;
+    --primary-soft: rgba(20,184,166,0.14);
+
+    --border: rgba(15, 23, 42, 0.10);
+    --shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+}
+
+.home-page{
+    background: var(--bg);
+    min-height: 100vh;
+}
+
+.home-main{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 26px 18px 50px;
+}
+
+/* HERO (inchangé) */
+.hero{
+    background:
+            radial-gradient(circle at 20% 20%, rgba(20,184,166,0.20), transparent 55%),
+            radial-gradient(circle at 85% 30%, rgba(94,234,212,0.18), transparent 50%);
+    border-radius: 22px;
+    padding: 26px;
+    border: 1px solid rgba(20,184,166,0.16);
+}
+
+.hero__inner{
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 22px;
+    align-items: center;
+}
+
+.hero__title{
+    margin: 0 0 12px;
+    line-height: 1.1;
+    color: #0f172a;
+}
+
+.hero__titleLine{
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.02em;
+}
+
+.hero__titleAccent{
+    display: block;
+    margin-top: 10px;
+    font-size: clamp(40px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--primary-dark);
+    letter-spacing: -0.02em;
+    text-shadow: 0 10px 24px rgba(15, 118, 110, 0.14);
+}
+
+.hero__imageWrap{
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.hero__image{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===========================
+   MINI BLOCK (plein écran + sans cadre)
+   =========================== */
+.home-miniBlock{
+    min-height: 100vh;                 /* ✅ plein écran */
+    display: grid;
+    align-items: center;
+    padding: 0;                        /* ✅ plus de padding “bloc” */
+}
+
+.home-miniBlock__inner{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px;                   /* ✅ juste un padding léger */
+    background: transparent;           /* ✅ plus de cadre */
+    border: none;                      /* ✅ plus de cadre */
+    border-radius: 0;                  /* ✅ plus de cadre */
+    box-shadow: none;                  /* ✅ plus de cadre */
+}
+
+.home-miniBlock__kicker{
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: rgba(15, 23, 42, 0.60);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.home-miniBlock__title{
+    margin: 0 0 14px;
+    font-size: clamp(34px, 4vw, 56px); /* ✅ un peu plus “site” */
+    line-height: 1.05;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.home-miniBlock__desc{
+    margin: 0 0 12px;
+    color: rgba(15, 23, 42, 0.70);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 80ch;
+}
+
+.home-miniBlock__list{
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    max-width: 80ch;
+}
+
+.home-miniBlock__list li{
+    position: relative;
+    padding-left: 28px;
+    color: rgba(15, 23, 42, 0.82);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.home-miniBlock__list li::before{
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-dark);
+    font-weight: 900;
+}
+
+/* ===========================
+   FEATURES (plein écran + cartes plus grandes)
+   =========================== */
+.features{
+    min-height: 100vh;                 /* ✅ plein écran */
+    display: grid;
+    align-items: center;
+    padding: 0;                        /* ✅ pas un petit bloc */
+}
+
+.features__title{
+    text-align: center;
+    margin: 0 0 20px;
+    color: #0f172a;
+    font-size: 30px;                   /* ✅ un peu plus grand */
+    font-weight: 900;
+}
+
+.features__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;                         /* ✅ + d’air */
+}
+
+.f-card{
+    background: rgba(255,255,255,0.78);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;                     /* ✅ cartes plus grandes */
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    min-height: 210px;                 /* ✅ “grande carte” */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.f-icon{
+    width: 54px;                       /* ✅ + grand */
+    height: 54px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: var(--primary-soft);
+    font-size: 22px;
+}
+
+.f-title{
+    margin: 14px 0 8px;
+    font-weight: 900;
+    color: #0f172a;
+    font-size: 20px;
+}
+
+.f-text{
+    margin: 0;
+    color: rgba(15, 23, 42, 0.70);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.f-link{
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--primary-dark);
+    font-weight: 900;
+}
+
+/* ===========================
+   THEMES (plein écran + ronds plus grands)
+   =========================== */
+.home-themes{
+    min-height: 100vh;                 /* ✅ plein écran */
+    display: grid;
+    align-items: center;
+    padding: 0;                        /* ✅ on centre */
+}
+
+.home-themes__inner{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+.home-themes__header{
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.home-themes__title{
+    margin: 0 0 8px;
+    font-weight: 900;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #0f172a;
+    font-size: 22px;
+}
+
+.home-themes__subtitle{
+    margin: 0;
+    color: rgba(15, 23, 42, 0.60);
+    font-weight: 600;
+}
+
+.home-themes__grid{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 26px 18px;
+    justify-items: center;
+    padding-top: 10px;
+}
+
+.theme{
+    text-decoration: none;
+    width: 100%;
+    max-width: 180px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+}
+
+/* ✅ ronds un peu + grands */
+.theme__icon{
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    display: block;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.theme__img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1);
+    transition: transform 220ms ease, filter 220ms ease;
+    filter: saturate(1.05) contrast(1.05);
+    animation: themeFloat 3.2s ease-in-out infinite;
+}
+
+.theme__label{
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(15, 23, 42, 0.62);
+    line-height: 1.3;
+}
+
+.theme:hover .theme__icon{
+    transform: translateY(-3px);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.14);
+}
+
+.theme:hover .theme__img{
+    transform: scale(1.06);
+}
+
+@keyframes themeFloat{
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .theme__img{ animation: none; transition: none; }
+}
+
+/* ✅ un peu d’espace avant les feedbacks (sans changer le composant) */
+.testimonials{
+    margin-top: 36px;                  /* ✅ plus d’air */
+}
+
+/* CTA (inchangé) */
+.cta{
+    margin-top: 24px;
+}
+
+.cta__box{
+    background: var(--primary-dark);
+    border-radius: 22px;
+    padding: 26px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.cta__title{
+    margin: 0 0 12px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.cta__box--anim{
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    animation: ctaFloat 3.5s ease-in-out infinite;
+
+    background: linear-gradient(135deg,
+    #083344 0%,
+    #0f766e 30%,
+    #14b8a6 55%,
+    #0f766e 78%,
+    #083344 100%
+    );
+
+    border: 1px solid rgba(20,184,166,0.30);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.cta__box--anim::after{
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -60%;
+    width: 60%;
+    height: 180%;
+    background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.20) 45%,
+            rgba(255,255,255,0) 80%
+    );
+    transform: rotate(18deg);
+    animation: ctaShine 3.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.cta__box--anim::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 30%, rgba(255,255,255,0.14), transparent 55%);
+    pointer-events: none;
+}
+
+.cta__box--anim:hover{
+    animation-play-state: paused;
+    transform: translateY(-3px);
+    transition: transform .2s ease;
+}
+
+@keyframes ctaFloat{
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+}
+
+@keyframes ctaShine{
+    0%   { transform: translateX(0) rotate(18deg); opacity: 0; }
+    15%  { opacity: 1; }
+    45%  { opacity: 0; }
+    100% { transform: translateX(260%) rotate(18deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .cta__box--anim,
+    .cta__box--anim::after{
+        animation: none !important;
+    }
+}
+
+/* Responsive */
+@media (max-width: 980px){
+    .hero__inner{ grid-template-columns: 1fr; }
+    .hero__image{ height: 260px; }
+
+    .features__grid{ grid-template-columns: 1fr; }
+
+    .home-themes__grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px){
+    .home-themes__grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .theme__icon{ width: 98px; height: 98px; }
+}
+
+/* ===========================
+   FIX: moins d’espace + cercles plus grands
+   (à coller TOUT EN BAS du home.css)
+   =========================== */
+
+/* ✅ Réduire l’espace entre le titre et les 3 cartes */
+.features{
+    /* enlève le “vide” au-dessus de la section */
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
+}
+
+.features__title{
+    /* espace sous le titre */
+    margin: 0 0 6px !important;
+}
+
+/* ✅ Si tu as encore trop d’espace, ça aide aussi */
+.features__grid{
+    margin-top: 0 !important;
+}
+
+/* ✅ Agrandir les cercles des thématiques */
+.theme{
+    max-width: 210px !important;
+}
+
+.theme__icon{
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 999px !important;
+}
+
+/* garde l’image bien cadrée */
+.theme__img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* responsive */
+@media (max-width: 1100px){
+    .theme__icon{
+        width: 125px !important;
+        height: 125px !important;
+    }
+}
+
+@media (max-width: 640px){
+    .theme__icon{
+        width: 110px !important;
+        height: 110px !important;
+    }
+}
+
+/* ✅ FIX espace trop grand entre le titre et les cartes (FEATURES) */
+.features{
+    /* si tu avais mis plein écran quelque part, ça casse le “grand vide” */
+    min-height: auto !important;
+    height: auto !important;
+
+    /* colle le contenu en haut */
+    display: block !important;
+
+    /* réduit le padding vertical */
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+
+    /* réduit la marge au-dessus */
+    margin-top: 10px !important;
+}
+
+/* réduit l’espace sous le titre */
+.features__title{
+    margin-bottom: 18px !important;
+    padding-bottom: 0 !important;
+}
+
+/* rapproche la grille */
+.features__grid{
+    margin-top: 0 !important;
+    align-items: start !important;
+}
